@@ -10,5 +10,4 @@
 
 
 Valid credentials:
- login: ```vadym```, password: ```chepiga
-```.
+ login: ```vadym```, password: ```chepiga```.
