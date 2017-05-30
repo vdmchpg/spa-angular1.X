@@ -8,5 +8,8 @@
 7. ```compile:prod``` compiles prod (minified without source maps) version into distrib/ folder. The folder is cleaned up before compiling
 8. ```compile:prod:win``` the same as above but for Windows OS.
 
-Valid credentials: ```login: vadym```, ```password: chepiga
-``` 
+
+Valid credentials:
+ ```login: vadym```
+```password: chepiga
+```
