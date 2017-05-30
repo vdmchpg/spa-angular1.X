@@ -1,0 +1,70 @@
+<!--view-courses.tpl.html-->
+<ui-view>
+  <cdp-top-panel breadcrumbs="ctrl.breadcrumbs"></cdp-top-panel>
+  <div class="cdpui-course" ui-view>
+    <form class="form-horizontal col-xs-12">
+      <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          <input ng-model="ctrl.course.title" type="textarea" class="form-control" id="title" placeholder="Title" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <textarea ng-model="ctrl.course.description" class="form-control" id="description" placeholder="Description"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="date" class="col-sm-2 control-label">Date</label>
+        <div class="col-sm-10">
+          <input ng-model="ctrl.course.date" type="date" class="form-control" id="date"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="duration" class="col-sm-2 control-label">Duration</label>
+        <div class="col-sm-2">
+          <input ng-model="ctrl.course.duration" type="number" class="form-control" id="duration" placeholder="Duration" aria-describedby="helpBlock"/>
+        </div>
+        <div class="col-sm-8">
+          <span id="helpBlock" class="help-block">{{ ctrl.course.duration | durationFilter }}</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="col-xs-12 col-sm-2 control-label">Authors</p>
+        <div class="col-xs-5 col-sm-4">
+          <div class="list-group cdpui-course__authors">
+            <a ng-repeat="author in ctrl.filteredCourseAuthors" ng-class="{active : author.isSelected}" ng-click="ctrl.toggleSelected(a)" href="#" class="list-group-item cdpui-course__author">
+              {{ ::author.name }}
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-2 col-sm-2">
+          <button ng-click="ctrl.removeAuthors()" type="button" class="btn btn-block btn-sm"><i class="glyphicon glyphicon-arrow-right"></i></button>
+          <button ng-click="ctrl.addAuthors()" type="button" class="btn btn-block btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+        </div>
+        <div class="col-xs-5 col-sm-4">
+          <div class="list-group cdpui-course__authors">
+            <a ng-repeat="author in ctrl.authors" ng-class="{active : author.isSelected}" ng-click="author.isSelected = !author.isSelected" href="#" class="list-group-item cdpui-course__author">
+              {{ ::author.name }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-8 col-sm-4">
+          <div class="row">
+            <div class="col-sm-6">
+              <button ng-click="ctrl.updateCourse(ctrl.course.id, ctrl.course)" type="button" class="btn btn-info btn-block btn-save">Save <i class="glyphicon glyphicon-edit"></i></button>
+            </div>
+            <div class="col-sm-6">
+              <button ng-click="ctrl.goToCourses()" type="button" class="btn btn-danger btn-block btn-cancel">Cancel <i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ui-view>
+

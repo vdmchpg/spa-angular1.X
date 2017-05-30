@@ -1,0 +1,39 @@
+@import (reference) "~components/styles/variables";
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+
+cdp-login-component {
+  .cdpui-login {
+    margin: 0 auto;
+    max-width: 320px;
+    height: calc(100% ~ '-' @header-height-xs ~ '-' @footer-height-xs);
+    padding: 30px;
+    font-size: 0.7em;
+    overflow-y: auto;
+  }
+
+  .cdpui-login__login {
+    margin-top: 5px;
+  }
+
+  .cdpui-login__submit {
+    margin-top: 20px;
+    color: #fff;
+    font-family: "Pacifico", arial, sans-serif;
+  }
+
+  .cdpui-login__heading {
+    margin: 0;
+    font-family: "Pacifico", arial, sans-serif;
+    color: @blue-dark;
+    text-shadow: 0 2px 2px @light-blue;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .cdpui-login {
+      height: calc(100% ~ '-' @header-height-sm ~ '-' @footer-height-sm);
+    }
+  }
+}
+
+
+

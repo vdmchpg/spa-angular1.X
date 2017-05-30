@@ -1,0 +1,40 @@
+<!--view-login.tpl.html-->
+<div class="cdpui-login" ui-view>
+  <div ng-if="ctrl.authErr" class="cdpui-login__error alert alert-danger" role="alert">Login and/or Password is incorrect</div>
+  <form name="loginForm" class="cdpui-login__form" ng-submit="ctrl.onSubmit()" >
+    <h2 class="cdpui-login__heading">Please sign in</h2>
+    <div class="form-group" ng-class="{ 'has-error' : loginForm.login.$error.pattern }">
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input name="login"
+             ng-model="ctrl.login"
+             ng-pattern="/^[a-zA-Z]{1,25}$/"
+             ng-model-options="{ debounce: 500 }"
+             type="text"
+             id="inputEmail"
+             class="cdpui-login__login form-control"
+             placeholder="Login"
+             required=""
+             autofocus="">
+
+      <span ng-if="loginForm.login.$error.pattern" class="text-danger">Login must contains only latin letters</span>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$error.pattern }">
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input name="password"
+             ng-model="ctrl.password"
+             ng-pattern="/^[a-zA-Z0-9]{6,}$/"
+             ng-model-options="{ debounce: 500 }"
+             type="password"
+             id="inputPassword"
+             class="cdpui-login__password form-control"
+             placeholder="Password"
+             required="">
+
+      <span ng-if="loginForm.password.$error.pattern" class="text-danger">Password must contains min 6 symbols, only latin letters and digits</span>
+    </div>
+    <button class="cdpui-login__submit btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+  </form>
+</div>
+
+

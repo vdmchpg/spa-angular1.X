@@ -1,0 +1,27 @@
+@import (reference) "~components/styles/variables";
+
+cdp-footer {
+  .cdpui-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: @footer-height-xs;
+    box-sizing: border-box;
+    font-size: 1em;
+    background:@gray-tundora;
+    color: @blue-dark;
+  }
+
+  .cdpui-footer__copyright {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  cdp-footer {
+    .cdpui-footer {
+      height: @footer-height-sm;
+      font-size: 1.5em;
+    }
+  }
+}

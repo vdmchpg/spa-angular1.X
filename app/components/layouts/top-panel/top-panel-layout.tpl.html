@@ -1,0 +1,20 @@
+<!--top-panel-layout.tpl.html-->
+<div class="cdpui-top-panel">
+    <div class="row">
+      <div class="cdpui-top-panel__breadcrumbs-wrap col-xs-12 col-sm-8">
+        <ul class="cdpui-top-panel__breadcrumbs">
+          <li ng-repeat="link in ctrl.breadcrumbs.slice(0, ctrl.breadcrumbs.length-1)" class="cdpui-top-panel__breadcrumbs-item">
+            <a ui-sref="{{ ::link.state }}" class="cdpui-top-panel__breadcrumbs-link">{{ ::link.name }}</a> /
+          </li>
+
+          <li class="cdpui-top-panel__breadcrumbs-item--last">
+            <span class="cdpui-top-panel__breadcrumbs-link--last">{{ ::ctrl.breadcrumbs.slice(-1)[0].name }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="cdpui-top-panel__login-wrap col-xs-12 col-sm-4 text-right">
+        <span class="">{{::ctrl.user}}</span>
+        <a class="btn btn-sm btn-info" ui-sref="login" ng-click="ctrl.logout()">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@import (reference) "~components/styles/variables";
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+
+cdp-course-component {
+  overflow: auto;
+
+  .cdpui-course {
+    padding-top: 20px;
+    font-size: 0.7em;
+    height: calc(100% ~ '-' @header-height-xs ~ '-' @footer-height-xs ~ '-' 80px);
+  }
+
+  .cdpui-course__authors {
+    height: 220px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-y: auto;
+  }
+
+  .cdpui-course__author {
+    border-right: none;
+    border-left: none;
+
+    &:first-of-type {
+      border-top: none;
+    }
+  }
+
+  .control-label {
+    font-weight: 600;
+  }
+
+  .btn-sm {
+    padding: 0;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    margin-top: 20px;
+  }
+  @media only screen and (min-width: 768px) {
+    .cdpui-course {
+      height: calc(100% ~ '-' @header-height-sm ~ '-' @footer-height-sm ~ '-' 70px);
+    }
+  }
+}
+
+

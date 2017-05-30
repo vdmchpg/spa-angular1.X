@@ -1,0 +1,83 @@
+@import (reference) "~components/styles/variables";
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+
+cdp-courses-component {
+  overflow: auto;
+
+  .cdpui-courses {
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 0.7em;
+    height: calc(100% ~ '-' @header-height-xs ~ '-' @footer-height-xs ~ '-' 80px);
+    overflow-y: auto;
+  }
+
+  .cdpui-courses-search,
+  .cdpui-courses-add {
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+
+  .cdpui-courses-list-l {
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cdpui-courses-item__content-wrap {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #1a9cb0;
+    box-shadow: 2px 2px 10px 0 rgba(0,0,0,.4);
+  }
+
+  .cdpui-courses-item__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+  .cdpui-courses-item__header,
+  .cdpui-courses-item__date,
+  .cdpui-courses-item__duration {
+    margin: 10px 0 0;
+    font-weight: 600;
+  }
+
+  .cdpui-courses-item__header {
+    font-size: 2em;
+  }
+
+  .cdpui-courses-item__date,
+  .cdpui-courses-item__duration {
+    font-size: 1.5em;
+  }
+
+  .cdpui-courses-item__duration {
+    text-align: left;
+  }
+
+  .cdpui-courses-item__date {
+    text-align: right;
+  }
+
+  .cdpui-courses-item__description {
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+
+  .cdpui-courses-item__controls {
+    a {
+      font-size: 1.5em;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .cdpui-courses {
+      height: calc(100% ~ '-' @header-height-sm ~ '-' @footer-height-sm ~ '-' 70px);
+    }
+  }
+}
+
+

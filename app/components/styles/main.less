@@ -1,0 +1,25 @@
+@import (reference) "variables";
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed);
+
+html {
+  height: 100%;
+
+  body {
+    height: 100%;
+    font: 100% 'Ubuntu Condensed',  Helvetica, sans-serif;
+    background-color: @gray-snow;
+  }
+}
+
+.cdpui-wrapper {
+  height: calc(100% ~ '-' @header-height-xs ~ '-' @footer-height-xs);
+  overflow: auto;
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  .cdpui-wrapper {
+    height: calc(100% ~ '-' @header-height-sm ~ '-' @footer-height-sm);
+    font-size: 2em;
+  }
+}

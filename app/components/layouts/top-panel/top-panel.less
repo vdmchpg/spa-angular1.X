@@ -1,0 +1,29 @@
+@import (reference) "~components/styles/variables";
+
+cdp-top-panel {
+  .cdpui-top-panel {
+    padding: 20px;
+    background-color: #e6e6e6;
+  }
+
+  .cdpui-top-panel__breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cdpui-top-panel__breadcrumbs-item,
+  .cdpui-top-panel__breadcrumbs-item--last {
+    display: inline-block;
+    text-transform: capitalize;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  cdp-footer {
+    .cdpui-footer {
+      height: @footer-height-sm;
+      font-size: 1.5em;
+    }
+  }
+}
